@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'home/home.css' %}">
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>GlobOrganic</title>
+        <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
+
+        <script  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="{% static 'home/script.js' %}"></script>
+        <script src="{% static 'home/lazy_load.js'%"></script>
+        <script src="{% static 'home/dropdownmenu.js' %}"></script>
+        <script src="https://kit.fontawesome.com/6fd983a717.js" crossorigin="anonymous"></script>
+    </head>
+    <style>
+        @import "{% static 'css/imports.css' %}";
+        @import "{% static 'css/vars.css' %}";;
+    </style>
+    <body>
+        <div class="main-container">
+             <!-- navigation bar start-->
+            
+             {% include "public/navbar.html" %}
+
+            <!--Home Section Start-->
+            <section class="disply-board" id="disply-board">
+                <div class="max-width">
+                    <div class="display-board-imgs">
+                        <div class="descriptive-words">
+                            <span class="first"></span>
+                            <span class="second"></span>
+                        </div>
+                    </div>
+                    <div class="search-form-container">
+                        <form class="search-form" action="" method="GET"> 
+                            <label>Look For Specific Products</label>
+                            <div>
+                                <input type="text" name="text" class="search" placeholder="Look for Specific Products">
+                                <button type="submit"><img src="{% static 'home/images/search.png' %}"></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- about section start -->
+            <section class="brief-overview" id="brief-overview">
+                <div class="max-width">
+                    <h2 class="title">Brief Overiew on Us</h2>
+                    <div class="brief-overview-content">
+                        <div class="column left">
+                            <!-- <img src="../Resourses/profilephoto.jpg" alt=""> -->
+                            <img src="{% static 'home/images/MAIN11.jpg' %}" alt="globorganic logo">
+                        </div>
+                        <div class="column right">
+                            Our company provides various Moroccan organic products and services, including private labels, to its international customers. We deal with international countries all over the world, in Europe, Asia, America, Australia and Africa.
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- sevices section start -->
+            <section class="services" id="services">
+                <div class="max-width">
+                    <h2 class="title">Our Services</h2>
+                    <div class="services-content">
+
+                    <div class="card">
+                        <div class="box">
+                            <!-- <img src="../Resourses/vilage_wall.jpg"> -->
+                            <div class="text">Organic Oils</div>
+                            <p>Provide you with the Most High Quality Natural and Organic Oils of a major range of plants</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                            <div class="box">
+                                <!-- <img src="../Resourses/charcter_design_example.jpg"> -->
+                                <div class="text">Private Labling</div>
+                                <p>Provide Distributer with Ready to Sell Oils, With there own Covers or one of owr designs.</p>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="box">
+                                <!-- <img src="../Resourses/logo_design_example.jpg"> -->
+                                <div class="text">Shipping</div>
+                                <p>We Ship our Products World-widely in a time period depends on you country .</p>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="box">
+                                <!-- <img src="../Resourses/t_shirt_design_example.jpg"> -->
+                                <div class="text"></div>
+                                <p>Something Else</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!--Skills Section Start-->
+
+            <section class="costumers" id="costumers">
+                <div class="max-width">
+                    <h2 class="title">Our Costumers</h2>
+                    <div class="costumers-content">
+                        <div class="costumer-section">
+                            <h4 class="costumer-name">Some Company</h4>
+                            <p>some Company do somthing.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="certifications" id="certifications">
+                <div class="max-width">
+                    <h2 class="title">Our Certifications</h2>
+                    <div class="certifications-content">
+
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        {% include "public/footer.html" %}
+        
+    </body>
+
+</html>

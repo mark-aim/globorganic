@@ -1,0 +1,135 @@
+@import "imports.css";
+@import "vars.css";
+
+/*navbar styling*/
+.navbar{
+    position: fixed;
+    padding: 10px;
+    width: 100%;
+    z-index: 999;
+    font-family: 'Ubuntu', sans-serif;
+    transition: all 0.3s ease;
+    background-image: linear-gradient(rgba(25, 59, 30, .8),rgba(25, 59, 30, .5),rgba(0,0,0,0));
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.navbar.sticky{
+    padding: 15px;
+    background-color:var(--background-highlight) 
+}
+.navbar .max-width{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+.navbar .logo a img{
+    width: 75%;
+}
+
+.navbar .menu li{
+    list-style: none;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+.navbar .menu li a {
+    color: var(--text1-color);
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.4s ease;
+}
+
+.navbar .menu .menu-link{
+    margin-left: 30px;
+}
+
+.navbar .menu .link-list-iten:hover{
+    transform: scale(1.3);
+}
+.navbar .menu li:hover .menu-link{
+    color: var(--attention-color);
+}
+
+.navbar .menu .sub-menu {
+    position: absolute;
+    background-color: var(--background-highlight);
+    margin-top: 10px;
+    padding: 10px;
+    width: 200px;
+    display: none;
+}
+.navbar .menu .sub-menu.active {
+    display:block;
+    justify-items: center;
+}
+
+.navbar .menu .sub-menu .sub-menu-item {
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0px;
+}
+
+.navbar .menu .sub-menu .sub-menu-item:hover a{
+    color: var(--attention-color);
+}
+.navbar .menu .log ,
+.navbar .menu  .register{
+    padding: 7px 15px;
+    transition: all 0.4s ease;
+}
+
+.navbar .menu .log {
+    border: 1px solid var(--attention-color);
+    border-radius: 15px;
+    margin-left: 30px;
+}
+
+.navbar .menu .register{
+    background-color: var(--attention-color);
+    color: var(--background1);
+    border: 0 solid;
+    border-radius: 15px;
+    margin-left: 15px;
+    
+}
+
+.navbar .menu .log:hover,
+.navbar .menu .register:hover
+{
+    border-width: 1px;
+    border-color: var(--text-color);
+    color: var(--text-color);
+    background-color: var(--background1);
+    font-weight: 600;
+}
+
+/*Menu button styling*/
+.menu-btn{
+    color: var(--text1-color);
+    cursor: pointer;
+    display: none;
+}
+.menu-btn i span{
+    display: block;
+    background-color: var(--text-color);
+    margin-bottom: 5px;
+    width: 25px;
+    height: 4px;
+    transition: all 0.3s ease;
+}
+.menu-btn i.active .l-1{
+    display: none;
+}
+.menu-btn i.active .l-0{
+    transform: rotate(45deg) translate(6px);
+}
+.menu-btn i.active .l-2{
+    transform: rotate(-45deg) translate(6px);
+}
