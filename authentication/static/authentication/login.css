@@ -1,0 +1,130 @@
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+section .max-width .title{
+    user-select: none;
+    margin-bottom: 25px;
+}
+.errors-conrainer{
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+background-color: rgba(255, 0, 0, 0.4);
+padding: 10px 5px;
+margin-bottom: 15px;
+}
+.errors-conrainer ul{
+    list-style: none;
+}
+
+.errors-conrainer ul li{
+    color: var(--text1-color);
+    font-size: 16px;
+}
+
+.login-section .max-width{
+    margin: 0px auto;
+    height: 40em;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: linear-gradient( rgba(82, 144, 107,.05), rgba(25, 59, 30, .5),rgb(25, 59, 30)), url('images/slide_one.jpg')/*url(images/slide_three.jpg)*/;
+    transition: .4s ease;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-section .max-width .display-board-imgs{
+    position: absolute;
+    background-size: cover;
+    width: 100%;
+    height: 40em;
+}
+
+.login-section .max-width .form-container{
+    position: absolute;
+    font-family: 'Ubuntu', sans-serif;
+    border: solid 2px var(--attention-color);
+    border-radius: 30px;
+    background: rgba(82, 144, 107, 0.5);
+    backdrop-filter: blur(5px) saturate(180%);
+    padding: 30px 50px;
+    width: 500px;
+}
+
+.login-section .max-width .form-container .login-form{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.login-section .max-width .form-container .login-form label{
+    color: var(--text-color);
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.login-section .max-width .form-container .login-form input{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 16px;
+    margin-bottom: 15px;
+    width: 100%;
+    padding: 5px 10px;
+    outline: none;
+    border: solid 2px var(--attention-color);
+    border-radius: 20px;
+    background: transparent;
+    color: var(--text1-color);
+    transition: all 0.3s ease;
+}
+.login-section .max-width .form-container .login-form input:hover,
+.login-section .max-width .form-container .login-form input:focus{
+
+    border: solid 2.5px var(--text-color);
+}
+
+::placeholder{
+    color: var(--text-color);
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.login-section .max-width .form-container .login-form a{
+    text-decoration: underline;
+    color: var(--text-color);
+    font-size: 14px;
+}
+.login-section .max-width .form-container .login-form a:hover{
+    color: var(--attention-color);
+}
+
+.login-section .max-width .form-container .login-form button{
+    align-self: flex-end;
+    padding: 10px 15px;
+    margin-top: 10px;
+    color: var(--attention-color);
+    border: solid 0px var(--attention-color);
+    border-radius: 20px;
+    background-color: transparent;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 18px;
+    background-color: var(--attention-color);
+    color: var(--background1);
+    border: 0px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.login-section .max-width .form-container .login-form button:hover{
+    background-color: transparent;
+    color: var(--attention-color);
+    border: solid 2px var(--attention-color);
+    font-weight: bold;
+}

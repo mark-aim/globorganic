@@ -1,0 +1,266 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    
+}
+body{
+    background: var(--background1);
+}
+.max-width{
+    max-width: 1300px;
+    padding: 0px 50px;
+    margin: auto;
+}
+
+/*Home section styling*/
+.disply-board{
+    padding: 0px;
+    display: flex;
+    justify-self: center;
+    top: 0px;
+    height: 620px;
+    color: var(--text-color);
+}
+
+.disply-board .max-width{
+    margin: 0px auto;
+    height: 40em;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: linear-gradient( rgba(82, 144, 107,.5), rgba(25, 59, 30, .7)), var(--slide0)/*url(images/slide_three.jpg)*/;
+    transition: 5s;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    animation-name: slider-animation;
+    animation-direction: alternate;
+    animation-play-state: running;
+    animation-timing-function: ease-in-out;
+    animation-duration: 30s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+}
+@keyframes slider-animation{
+    0%{
+        background-image: linear-gradient(rgba(82, 144, 107,.3), rgba(25, 59, 30, 1)), var(--slide0)/*url(images/slide_zero.jpg)*/;
+    }
+    25%{
+        background-image: linear-gradient(rgba(82, 144, 107,.3), rgba(25, 59, 30, 1)), var(--slide1)/*url(images/slide_one.jpg)*/;
+    }
+    50%{
+        background-image: linear-gradient(rgba(82, 144, 107,.3), rgba(25, 59, 30, 1)), var(--slide2)/*url(images/slide_two.jpg)*/;
+    }
+    75%{
+        background-image: linear-gradient(rgba(82, 144, 107,.3), rgba(25, 59, 30, 1)), var(--slide3)/*url(images/slide_three.jpg)*/;
+    }
+    100%{
+        background-image: linear-gradient(rgba(82, 144, 107,.3), rgba(25, 59, 30, 1)), var(--slide4)/*url(images/slide_four.jpg)*/;
+    }
+}
+
+.disply-board .max-width .search-form-container{
+    position: absolute;
+    width: 95%;
+    height: 90%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.disply-board .max-width .display-board-imgs{
+    position: absolute;
+    width: 95%;
+    height: 90%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.disply-board .max-width .display-board-imgs .descriptive-words{
+    font-family: 'Edu VIC WA NT Beginner', cursive;
+    user-select: none;
+    word-spacing: 10px;
+    font-weight: bold;
+    
+}
+
+
+.disply-board .max-width .display-board-imgs .descriptive-words .first span{
+    color: var(--text1-color);
+    font-size: 48px;
+    font-weight: bold;
+}
+
+
+
+
+
+.disply-board .max-width .search-form{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: rgba(82, 144, 107, .7);
+    border-radius: 30px;
+    backdrop-filter: blur(4px) saturate(180%);
+}
+.disply-board .max-width .search-form label{
+    margin-bottom: 20px;
+    color: var(--text-color);
+    font-size: 24px;
+    font-weight: bold;
+}
+.disply-board .max-width .search-form div{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    padding: 10px 20px;
+}
+
+.disply-board .max-width .search-form div input{
+    background-color: transparent;
+    border: 0;
+    flex: 1;
+    outline: none;
+    padding: 5px 10px;
+    font-size: 18px;
+    color: var(--background1);
+}
+::placeholder{
+    color: var(--text-color);
+}
+.disply-board .max-width .search-form div button{
+    border: 0;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    background: var(--attention-color);
+    cursor: pointer;
+    transition: all .4s ease;
+}
+.disply-board .max-width .search-form div button:hover{
+    background: var(--background-highlight);
+    border: solid 2px var(--text-color);
+}
+.disply-board .max-width .search-form div button img{
+    width: 25px;
+}
+
+.disply-board .max-width .highlight-pruduct-card{
+    margin-left: 25px;
+    background: rgba(0, 0, 0, 0.3);
+    width: 300px;
+    height: 275px;
+    border: solid 2px var(--attention-color);
+    border-radius: 20px;
+    backdrop-filter: blur(4px) saturate(180%);
+}
+
+
+/* Similar content styling */
+section {
+    padding: 100px 0px;
+}
+section .title{
+    position: relative;
+    text-align: center;
+    font-size: 48px;
+    font-weight: 500;
+    font-family: 'Edu VIC WA NT Beginner', cursive;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    color: var(--text1-color);
+}
+section .title::before{
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 3px;
+    bottom: 0px;
+    left: 50%;
+    background: var(--attention-color);
+    transform: translateX(-50%);
+}
+section .title::after{
+    font-size: 16px;
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    padding: 5px;
+    color: var(--attention-color);
+    background: var(--background1);
+    transform: translateX(-50%);
+}
+
+
+
+/*
+-----------------------------------
+     Resposive Media Query Start
+-----------------------------------
+*/
+@media(min-width: 714px){
+    .disply-board .max-width .display-board-imgs .descriptive-words{
+        width: 65%;
+    }
+}
+@media (max-width: 1020px){
+
+    .max-width{
+        max-width: 950px;
+    }
+    .disply-board .max-width .search-form-container{
+        justify-content: center;
+        align-items: flex-end;
+    }
+    .disply-board .max-width .display-board-imgs{
+
+        justify-content: center;
+        align-items: flex-start;
+        margin-top: 20px;
+    }
+    .disply-board .max-width .highlight-pruduct-card{
+        margin-top: 20px;
+        margin-left: 0;
+    }
+
+}
+
+
+@media (max-width: 713px){
+    section .title{
+        font-size: 36px;
+    }
+    section .title::after{
+        font-size: 14px;
+    }
+    
+    .disply-board .max-width .search-form div{
+        padding: 7px 10px;
+    }
+    .disply-board .max-width .search-form label{
+        font-size: 18px;
+    }
+   
+    .disply-board .max-width .search-form div input{
+        font-size: 14px;
+    }
+    .disply-board .max-width .search-form div button img{
+        width: 20px;
+    }
+    .disply-board .max-width .search-form div button{
+        width: 30px;
+        height: 30px;
+    }
+
+}
+
+@media (max-width: 595px){
+
+}

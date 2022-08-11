@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>GlobOrganic | LogIn</title>
+        <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/page.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'authentication/login.css' %}">
+        <script  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="{% static 'home/lazy_load.js' %}"></script>
+        <script src="https://kit.fontawesome.com/6fd983a717.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="main-container">
+            <!-- navigation bar start-->
+            {% include "public/navbar.html" %}
+            <section class="login-section disply-board">
+                <div class="max-width">
+                    <div class="display-board-imgs">
+                    </div>
+                    <div class="form-container">
+                        <h2 class="title">Log in</h2>
+                        {% if login_form.non_field_errors %}
+                        <div class="errors-conrainer">
+                            {{ login_form.non_field_errors }}
+                        </div>
+                        {% endif %}
+                        <form class="login-form" method="post">
+                            {% csrf_token %}
+                            <label for="">UserName :</label>
+                            {{login_form.username}}                            
+                            <label for="">Password :</label>
+                            {{login_form.password}}    
+                            <a href="#">Forgot my password !</a>
+                            <button type="submit">Login</button>
+                        </form>
+                    </div>
+                </div>
+            <section>
+        </div>
+        {% include "public/footer.html" %}
+    </body>
+</html>

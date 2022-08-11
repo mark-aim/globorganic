@@ -72,3 +72,15 @@
     color: var(--background-highlight);
     user-select: none;
 }
+
+@media (max-width: 713px){
+    .footer .container .row .col {
+        width: 50%;
+    }
+}
+
+@media (max-width: 595px){
+    .footer .container .row .col {
+        width: 100%;
+    }
+}

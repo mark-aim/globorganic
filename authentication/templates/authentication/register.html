@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>GlobOrganic | Register</title>
+        <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/page.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'authentication/register.css' %}">
+        <script  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="{% static 'home/lazy_load.js' %}"></script>
+        <script src="https://kit.fontawesome.com/6fd983a717.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div class="main-container">
+            <!-- navigation bar start-->
+            {% include "public/navbar.html" %}
+            <section class="register-section">
+                <div class="max-width">
+                    <div class="display-board-imgs">
+                    </div>
+                    <div class="form-container">
+                        
+                        <h2 class="title">Register</h2>
+                        <form class="register-form" method="post">
+                            {% csrf_token %}
+                            <div class="first-column column">
+                                    {{register_form.first_name}}
+                                    {{register_form.last_name}}
+                            </div>
+                            <div class="second-column column">
+                                <div>
+                                    {{register_form.username}}
+                                    {{register_form.errors.username}}
+                                </div>
+                            </div>
+                            <div class="third-column column">
+                                <input type="text" id="country" name="country" placeholder="Choose your Country" required>
+                                {{register_form.phone_number}}
+                            </div>
+                            <div class="fourth-column column">
+                                <div>
+                                    {{register_form.email}}
+                                    {{register_form.errors.email}}
+                                </div>
+                            </div>
+                            
+                            <div class="fifth-column column">
+                                <div>
+                                    {{register_form.password1}}
+                                    {{register_form.errors.password1}}
+                                </div>
+                                <div>
+                                    {{register_form.password2}}
+                                    {{register_form.errors.password2}}
+                                </div>
+                            </div>
+                            
+                            <a href="#">Already have an Account !</a>
+                            <button type="submit">register</button>
+                            <datalist id="countries">
+                                
+                            </datalist>
+                        </form>
+                    </div>
+                </div>
+            <section>
+        </div>
+        {% include "public/footer.html" %}
+    </body>
+</html>
