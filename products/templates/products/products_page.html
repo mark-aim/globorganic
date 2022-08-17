@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>GlobOrganic | Products</title>
+        <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/page.css' %}">
+        <link rel="stylesheet" href="{% static 'products/products_page.css' %}">
+        <script  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://kit.fontawesome.com/6fd983a717.js" crossorigin="anonymous"></script>
+    </head>
+    <style>
+        @import "{% static 'css/imports.css' %}";
+        @import "{% static 'css/vars.css' %}";;
+    </style>
+    <body>
+        <div class="main-container">
+             <!-- navigation bar start-->
+            
+             {% include "public/navbar.html" %}
+
+            <!--Home Section Start-->
+            <section class="disply-board" id="disply-board">
+                <div class="max-width">
+                    <div class="display-board-imgs">
+                        <div class="highlight-pruduct-card">
+                        </div>
+                    </div>
+                    <div class="search-form-container">
+                        <form class="search-form" action="" method="GET"> 
+                            <label>Look For Specific Products</label>
+                            <div>
+                                <input type="text" name="text" class="search" placeholder="Look for Specific Products">
+                                <button type="submit"><img src="{% static 'home/images/search.png' %}"></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <section class="items-gallery" id="items-gallery">
+                <div class="max-width">
+                    <div class="top-container">
+
+                    </div>
+                    <div class="gallery-body">
+                        <div class="right-row">
+                            <select name="sort-by">
+                                <option value="latest">latest</option>
+                                <option value="oldest">oldest</option>
+                                <option value="pupolar">pupolar</option>
+                            </select>
+                            <select name="type">
+                                <option value="oil">oil</option>
+                                <option value="savon">savon</option>
+                            </select>
+
+                            <div class="parameter-card">
+                                <h2>Price</h2>
+                                <p>Use slider or enter min or/and max price</p>
+                                <div class="price-input">
+                                    <div class="field">
+                                        <span>Min</span>
+                                        <input type="number" class="input-min" value="10">
+                                    </div>
+                                    <div class="seperator">-</div>
+                                    <div class="field">
+                                        <span>Max</span>
+                                        <input type="number" class="input-max" value="100">
+                                    </div>
+                                </div>
+                                <div class="currency">
+                                    <span>Currency</span>
+                                    <select name="type">
+                                        <option value="usd">USD</option>
+                                        <option value="euro">EURO</option>
+                                        <option value="mad">MAD</option>
+                                    </select>
+                                </div>
+                                <div class="slider">
+                                    <div class="range"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="left-row">
+                            <div class="grid-container">
+                                {% for product in products %}
+                                <div class="item-{{ forloop.counter }} item">
+                                    <img alt="{{ product.name }}" src="{{ product.imageUrl }}">
+                                    <div class="name">
+                                        {{ product.name}}
+                                    </div>
+                                    <div class="discription">
+                                        {{ product.short_discription }}
+                                    </div>
+                                    <div class="button-container">
+                                        <a class="see-more-btn btn" href="#">See More</a>
+                                        <a class="add-to-cart-btn btn" href="#">Add To Cart</a>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            <div class="left-row-footer">
+                                <div class="shortcut-container">
+                                    <div class="shortcut first-page-shortcut">
+                                        <a href="{% url 'products' 1 %}"><i class="fa-solid fa-angles-left"></i></a>
+                                    </div>
+                                    {% for page in pages_count %}
+                                    <div class="shortcut page-shortcut {% if forloop.counter is current_index%} current-page-shortcut{% endif %}">
+                                        <a href="{% url 'products' forloop.counter %}">{{ forloop.counter }}</a>
+                                    </div>
+                                    {% endfor %}
+                                    <div class="shortcut last-page-shortcut">
+                                        <a href="{% url 'products' pages_count_int %}"><i class="fa-solid fa-angles-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+        </div>
+
+        {% include "public/footer.html" %}
+        
+    </body>
+
+</html>

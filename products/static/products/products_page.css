@@ -162,6 +162,229 @@ body{
     backdrop-filter: blur(4px) saturate(180%);
 }
 
+.items-gallery{
+    background-color: var(--background1);
+}
+
+.gallery-body{
+    display: flex;
+    justify-content: start;
+    flex-direction: row;
+
+    border: solid 2px var(--attention-color);
+    border-radius: 20px;
+
+    font-family: 'Ubuntu', sans-serif;
+}
+.gallery-body .right-row{
+    display: flex;
+    justify-content: center;
+    align-self: flex-start;
+    flex-direction: column;
+
+    padding: 40px 20px;
+
+    color: var(--text-color);
+    background-color: var(--background-highlight);
+    border-radius: 18px 0px 0px 18px;
+
+}
+
+.gallery-body .right-row select{
+    width: 100px;
+}
+
+.gallery-body .right-row .parameter-card h2{
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.gallery-body .right-row .parameter-card p{
+    margin-bottom: 10px;
+}
+.gallery-body .right-row .parameter-card .price-input{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+}
+.gallery-body .right-row .parameter-card .price-input div{
+    margin: 5px 10px;
+}
+.gallery-body .right-row .parameter-card .price-input .field{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.gallery-body .right-row .parameter-card .price-input .field span{
+    margin-right: 10px;
+}
+.gallery-body .right-row .parameter-card .price-input .field input{
+    width: 50px;
+    text-align: center;
+    font-weight: bold;
+
+    border: solid 2px var(--attention-color);
+    border-radius: 20px;
+    background-color: var(--text-color);
+    color: var(--background1);
+    padding: 5px;
+
+    -webkit-appearance: none;
+}
+
+.gallery-body .right-row .parameter-card .price-input .field input::-webkit-outer-spin-button,
+.gallery-body .right-row .parameter-card .price-input .field input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+}
+.gallery-body .right-row .parameter-card .price-input .field input[type = number]{
+    -moz-appearance: textfield;
+}
+
+
+.gallery-body .left-row{
+    padding: 40px 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+
+    background-color: var(--text-color);
+    border-radius: 0px 18px 18px 0px;
+    width:100%;
+}
+
+.gallery-body .left-row .grid-container{
+    display: grid;
+    grid-template-columns: 33% 33% 34%;
+    grid-gap : 15px 10px;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    align-content: stretch;
+}
+.gallery-body .left-row .grid-container .item{
+    background-color: transparent;
+    min-height: 250px;
+
+    border: solid 0 var(--attention-color);
+
+    border-radius: 30px;
+    box-shadow: rgba(119, 140, 150, 0.2) 2px 4px 8px 2px;
+    transition: all 0.4s;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    flex-direction: column;
+
+    padding: 15px;
+}
+
+.gallery-body .left-row .grid-container .item:hover{
+    border: solid 1.5px var(--attention-color);
+    box-shadow: rgba(119, 140, 150, 0.3) 0px 19px 38px, rgba(119, 140, 150, 0.22) 0px 15px 12px;
+}
+.gallery-body .left-row .grid-container .item-3{
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+.gallery-body .left-row .grid-container .item-4{
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+.gallery-body .left-row .grid-container .item-6{
+    grid-column-start: 2;
+    grid-column-end: 4;
+}
+.gallery-body .left-row .grid-container .item-7{
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+.gallery-body .left-row .grid-container .item .button-container{
+    align-self: flex-end;
+}
+.gallery-body .left-row .grid-container .item .button-container .btn{
+    padding: 5px 10px;
+    border: solid 2px;
+    border-radius: 20px;
+
+    font-size: 16px;
+
+    transition: all 0.3s ease;
+}
+.gallery-body .left-row .grid-container .item .button-container .see-more-btn{
+    color: var(--text-color);
+    background-color: var(--background1);/*#e48800*/
+}
+.gallery-body .left-row .grid-container .item .button-container .add-to-cart-btn{
+    /* color: #e48800; */
+    color:  var(--background1);
+}
+.gallery-body .left-row .grid-container .item .button-container .see-more-btn:hover{
+    color: var(--text-color);
+    background-color: var(--attention-color);
+}
+.gallery-body .left-row .grid-container .item .button-container .add-to-cart-btn:hover{
+    color: var(--text-color);
+    background-color: var(--attention-color);
+}
+
+.gallery-body .left-row .grid-container .item .name{
+    font-family: 'Edu VIC WA NT Beginner', cursive;
+
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.gallery-body .left-row .grid-container .item .discription{
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.gallery-body .left-row .left-row-footer{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 20px;
+}
+.gallery-body .left-row .left-row-footer .shortcut-container{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.gallery-body .left-row .left-row-footer .shortcut-container div{
+    margin: 0 5px;
+    border-radius: 30px;
+    padding: 10px 15px;
+    font-size: 14px;
+}
+.gallery-body .left-row .left-row-footer .shortcut-container .page-shortcut{
+    background: var(--background1);
+    color: var(--text-color);
+}
+.gallery-body .left-row .left-row-footer .shortcut-container .page-shortcut a{
+    text-decoration: none;
+    color: var(--text-color);
+}
+.gallery-body .left-row .left-row-footer .shortcut-container .first-page-shortcut,
+.gallery-body .left-row .left-row-footer .shortcut-container .last-page-shortcut{
+    border: solid 2px;
+    color: var(--background1);
+    padding: 10px 12.5px;
+}
+.gallery-body .left-row .left-row-footer .shortcut-container .first-page-shortcut a,
+.gallery-body .left-row .left-row-footer .shortcut-container .last-page-shortcut a{
+    text-decoration: none;
+    color: var(--background1);
+    font-size: 12px;
+}
+.gallery-body .left-row .left-row-footer .shortcut-container .current-page-shortcut,
+.gallery-body .left-row .left-row-footer .shortcut-container .shortcut:hover{
+    background-color: var(--attention-color);
+}
+
 
 /* Similar content styling */
 section {
