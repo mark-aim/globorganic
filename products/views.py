@@ -18,3 +18,10 @@ def list_split_by(listA, n):
     for x in range(0, len(listA), n):
         every_chunk = listA[x: n+x]
         yield every_chunk
+
+def ProductPage(request, name):
+    product =Product.objects.filter(name=name);
+    if product is None:
+        return render(request, 'blog/index.html');
+    else:
+        return render(request, 'home/index.html')

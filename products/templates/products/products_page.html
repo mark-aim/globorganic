@@ -11,11 +11,11 @@
         <link rel="stylesheet" href="{% static 'products/products_page.css' %}">
         <script  src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script src="https://kit.fontawesome.com/6fd983a717.js" crossorigin="anonymous"></script>
+        <style>
+            @import "{% static 'css/imports.css' %}";
+            @import "{% static 'css/vars.css' %}";;
+        </style>
     </head>
-    <style>
-        @import "{% static 'css/imports.css' %}";
-        @import "{% static 'css/vars.css' %}";;
-    </style>
     <body>
         <div class="main-container">
              <!-- navigation bar start-->
@@ -48,18 +48,24 @@
                     </div>
                     <div class="gallery-body">
                         <div class="right-row">
-                            <select name="sort-by">
-                                <option value="latest">latest</option>
-                                <option value="oldest">oldest</option>
-                                <option value="pupolar">pupolar</option>
-                            </select>
-                            <select name="type">
-                                <option value="oil">oil</option>
-                                <option value="savon">savon</option>
-                            </select>
+                            <div class="sort-by setting-panel">
+                                <label>Sort by</label>
+                                <select name="sort-by-select">
+                                    <option value="latest">latest</option>
+                                    <option value="oldest">oldest</option>
+                                    <option value="pupolar">pupolar</option>
+                                </select>
+                            </div>
+                            <div class="type setting-panel">
+                                <label>Product type</label>
+                                <select name="type-select">
+                                    <option value="oil">oil</option>
+                                    <option value="savon">savon</option>
+                                </select>
+                            </div>
 
-                            <div class="parameter-card">
-                                <h2>Price</h2>
+                            <div class="price setting-panel">
+                                <h3>Price</h3>
                                 <p>Use slider or enter min or/and max price</p>
                                 <div class="price-input">
                                     <div class="field">
@@ -72,6 +78,14 @@
                                         <input type="number" class="input-max" value="100">
                                     </div>
                                 </div>
+                                <div class="slider">
+                                    <div class="progress"></div>
+                                </div>
+                                <div class="range-input">
+                                    <input type="range" class="range-min" min="10" max="100" value="10" step="5">
+                                    <input type="range" class="range-max" min="10" max="100" value="100" step="5">
+                                </div>
+
                                 <div class="currency">
                                     <span>Currency</span>
                                     <select name="type">
@@ -79,9 +93,6 @@
                                         <option value="euro">EURO</option>
                                         <option value="mad">MAD</option>
                                     </select>
-                                </div>
-                                <div class="slider">
-                                    <div class="range"></div>
                                 </div>
                             </div>
                         </div>
@@ -91,13 +102,13 @@
                                 <div class="item-{{ forloop.counter }} item">
                                     <img alt="{{ product.name }}" src="{{ product.imageUrl }}">
                                     <div class="name">
-                                        {{ product.name}}
+                                        {{ product.name }}
                                     </div>
                                     <div class="discription">
                                         {{ product.short_discription }}
                                     </div>
                                     <div class="button-container">
-                                        <a class="see-more-btn btn" href="#">See More</a>
+                                        <a class="see-more-btn btn" href="{% url 'product_page' '{{ product.name }}' %}">See More</a>
                                         <a class="add-to-cart-btn btn" href="#">Add To Cart</a>
                                     </div>
                                 </div>
@@ -105,17 +116,21 @@
                             </div>
                             <div class="left-row-footer">
                                 <div class="shortcut-container">
-                                    <div class="shortcut first-page-shortcut">
-                                        <a href="{% url 'products' 1 %}"><i class="fa-solid fa-angles-left"></i></a>
-                                    </div>
+                                    {% if current_index is not 1 %}
+                                    <a class="shortcut first-page-shortcut" href="{% url 'products' 1 %}">
+                                        <i class="fa-solid fa-angles-left"></i>
+                                    </a>
+                                    {% endif %}
                                     {% for page in pages_count %}
-                                    <div class="shortcut page-shortcut {% if forloop.counter is current_index%} current-page-shortcut{% endif %}">
-                                        <a href="{% url 'products' forloop.counter %}">{{ forloop.counter }}</a>
-                                    </div>
+                                    <a class="shortcut page-shortcut {% if forloop.counter is current_index%} current-page-shortcut {% endif %}" href="{% url 'products' forloop.counter %}">
+                                        {{ forloop.counter }}
+                                    </a>
                                     {% endfor %}
-                                    <div class="shortcut last-page-shortcut">
-                                        <a href="{% url 'products' pages_count_int %}"><i class="fa-solid fa-angles-right"></i></a>
-                                    </div>
+                                    {% if current_index is not pages_count_int %}
+                                    <a class="shortcut last-page-shortcut" href="{% url 'products' pages_count_int %}">
+                                        <i class="fa-solid fa-angles-right"></i>
+                                    </a>
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>
@@ -130,5 +145,5 @@
         {% include "public/footer.html" %}
         
     </body>
-
+    <script src="{% static 'products/js/range.js' %}"></script>
 </html>
